@@ -21,7 +21,7 @@ def motor_callback(msg):
 
 if __name__=="__main__":
 	rospy.init_node("motor")
-	sub=rospy.Subscriber("/cmd_vel",Twist,callback=motor_callback)
+	sub=rospy.Subscriber("/turtle1/cmd_vel",Twist,callback=motor_callback)
 	motor1=Motor(17,27)
 	motor2=Motor(18,23)
 	rospy.loginfo("The node 'Motor' has been started")
