@@ -1,4 +1,4 @@
-# Mascot_ROS
+# Navigation_Stack_ROS
 
 Differential drive car is used, and navigation stack has been implemented with sensor fusion of imu and wheel encoder data.
 run
