@@ -20,7 +20,14 @@
   <node pkg="tf" type="static_transform_publisher"  name="map_to_odom"
       args="0 0 0 0 0 0 /map /odom 100" /> 
   <node pkg="car_tf" type="imu_tf"  name="imu_tf" /> 
-  <node pkg="car_tf" type="lidar_tf"  name="lidar_tf" /> 
+  <node pkg="car_tf" type="lidar_tf"  name="lidar_tf" />
   <include file="$(find final_description)/launch/move_base.launch" />
   <include file="$(find final_description)/launch/display.launch" />
+
+  <!-- sensor fusion -->
+
+  <!-- <node pkg="robot_localization" type="ekf_localization_node"  name="ekf_se" clear_params="true" >
+      <rosparam command="load" file="$(find final_description)/config/ekf.yaml"/>
+      <remap from="odometry/filtered" to="odom"/>
+    </node> -->
 </launch>
